@@ -2,11 +2,5 @@ services:
   - type: web
     name: bybit-webhook-bot
     env: python
-    plan: free
-    buildCommand: ""
-    startCommand: python main.py
-    envVars:
-      - key: API_KEY
-        value: kL7OZ5u2ELPDsceYnl
-      - key: API_SECRET
-        value: kANZmyr20GxXuWLXXLTSkrYPukR9czARAAeb
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn main:app"
